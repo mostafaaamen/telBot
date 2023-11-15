@@ -1,6 +1,6 @@
 require("dotenv").config()
 const { Telegraf } = require('telegraf')
-const bot = new Telegraf(process.env.TOKEN||"6746052294:AAHTqosREvEWhAjWmGmrMGhNpg5mhTIx3qk")
+const bot = new Telegraf(process.env.TOKEN)
 function hasLinks(text) {
     const urlPattern = /^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([/\w .-]*)*\/?(\?[\w-]+=[\w-%&]*)?$/i;
     const urlRegex = /(http:\/\/|https:\/\/)\S+/gi;
