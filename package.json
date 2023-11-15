@@ -1,21 +1,17 @@
 {
   "name": "removelink",
   "version": "1.0.0",
-  "description": "",
+  "description": "remove link form new chat ",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon src/index.js",
-    "dev": "nodemon telegraf/loger.js"
+    "start": "node index.js",
+    "dev": "nodemon loger.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "axios": "^1.6.1",
-    "dotenv": "^16.3.1",
-    "node-telegram-bot-api": "^0.64.0",
-    "telegraf": "^4.15.0",
-    "telegram": "^2.19.10"
+    "telegraf": "^4.15.0" 
   }
 }
