@@ -11,7 +11,7 @@ bot.hears(/.*/,async (ctx) => {
     const textLength = text.length;
     let userName = ctx.message.from.username
     console.log(ctx.message.from.username)
-    let permesionsUser = ["DevPenetration","DevAtacker" ]
+    let permesionsUser = ["DevPenetration", ]
     console.log("permesions:  ", permesionsUser.includes(userName))
     if (permesionsUser.includes(userName)) {
         return
@@ -32,7 +32,7 @@ bot.hears(/.*/,async (ctx) => {
                      ----------------------------
 if you want to send importan link 
 can you send to 
-@DevPenetration or @DevAtacker
+@DevPenetration 
                     ----------------------------------------------
 
 System Created By
