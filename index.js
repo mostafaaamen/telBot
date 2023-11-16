@@ -1,6 +1,7 @@
 require("dotenv").config()
 const { Telegraf } = require('telegraf')
 const express = require("express")
+const axios =require("axios")
 const app = express()
 const bot = new Telegraf(process.env.TOKEN)
 function hasLinks(text) {
@@ -134,9 +135,21 @@ _____________________________________
 bot.launch()
 
 app.get("/", (req, res) => {
-    res.send("hellow from bot telegram to remove links")
+    res.json({"server":"ok"})
 })
-let PORT=process.env.PORT||3002
+
+let PORT = process.env.PORT || 3002
+setTimeout(() => {
+    axios.get("https://azmos-telbot.onrender.com")
+    .then(function (response) {
+        // Handle successful response
+        console.log('Response:', response.data);
+    })
+    .catch(function (error) {
+        // Handle error
+        console.error('Error:', error);
+    })
+}, 5000);
 app.listen(PORT,()=>console.log(`server running on ${PORT}`))
 
 
