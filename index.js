@@ -108,21 +108,20 @@ bot.hears(/.*/,async (ctx) => {
                 await ctx.telegram.deleteMessage(chatId, messageId);
                 // await ctx.telegram.deleteMessage(chatId, messageId+1);
                 ctx.reply(
-    `bot auto delete message have alink
+`bot auto delete message have alink
     
-                         from:          @${userName} 
-    
-                        messageId:     ${messageId}
-                     ----------------------------
+    from:          @${userName} 
+    messageId:     ${messageId}
+    ----------------------------
 if you want to send importan link 
 can you send to 
-@DevPenetration or @DevAtacker
-                    ----------------------------------------------
-
+@DevPenetration
+_____________________________________
 System Created By <a href="te.me/azmos-book">Group</a>
-             @DevPenetration
+@DevPenetration
 massage delete after 10s
-    `)
+_____________________________________
+    `,{parse_mode:"HTML"})
             setTimeout(() => {
                      ctx.telegram.deleteMessage(chatId, messageId + 1);}, 10000);
             } catch (error) {
