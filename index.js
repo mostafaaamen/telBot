@@ -118,7 +118,7 @@ if you want to send importan link
 can you send to 
 @DevPenetration
 _____________________________________
-System Created By <a href="te.me/azmos-book">Group</a>
+System Created By <a href="https://t.me/AzmosBooks">Group</a>
 @DevPenetration
 massage delete after 10s
 _____________________________________
