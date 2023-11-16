@@ -12,7 +12,7 @@ bot.hears(/.*/,async (ctx) => {
     const textLength = text.length;
     let userName = ctx.message.from.username
     console.log(ctx.message.from.username)
-    let permesionsUser = ["DevPenetration","DevAtacker" ]
+    let permesionsUser = ["DevPenetration" ]
     console.log("permesions:  ", permesionsUser.includes(userName))
     if (permesionsUser.includes(userName)) {
         return
