@@ -55,4 +55,4 @@ app.get("/", (req, res) => {
     res.send("hellow from bot telegram to remove links")
 })
 let PORT=process.env.PORT||3002
-app.listen(PORT,()=>console.log("server running on 3020"))
+app.listen(PORT,()=>console.log(`server running on ${PORT}`))
