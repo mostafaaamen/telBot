@@ -49,7 +49,7 @@ bot.command("link", (ctx) => {
     ----------------------------------
     الكتب و المذكرات
 
-<b>الفرقة الرابعة</b> :
+<b> الرابعة</b> :
 
     <b>كتب الترم الاول</b>    : <a href="https://t.me/AzmosBooks/11301">اضعط</a>
 
@@ -133,7 +133,7 @@ bot.command("info", (ctx) => {
     setTimeout(() => {
         ctx.telegram.deleteMessage(chatId, messageId)
         ctx.telegram.deleteMessage(chatId, messageId + 1)
-    }, 1000)
+    }, 2000*60)
 })
 
 bot.hears(/.*/,async (ctx) => {
