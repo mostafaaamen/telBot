@@ -13,18 +13,28 @@ function hasLinks(text) {
     return res
 }
 let html = `
-This Bot Allow To Delete New Chat Have alink
+اللهم ارزق إخواننا في فلسطين الصمود والقوة في وجه الطغيان وانصرهم.
+
+This Bot Allow To:
+
+1: Delete New Chat Have alink
+2: Get Links
+3: Get Infromations
 
 /link   : Show All Links You Need It
+
+/info   : Show Infromations you Need It
 `
 bot.start((ctx) => {
-    const htmlText = '<b>Hello</b>, <i>Telegram</i>!';
     ctx.reply(html, { parse_mode: 'HTML' });
 });
 
 
 bot.command("link", (ctx) => {
     let html = `
+اللهم ارزق إخواننا في فلسطين الصمود والقوة في وجه الطغيان وانصرهم.
+
+
     ----------------------------------
         <a href="http://books.sadat.online/">المنصة</a>
 
@@ -79,23 +89,58 @@ bot.command("link", (ctx) => {
         ctx.telegram.deleteMessage(chatId, messageId + 1)
     },10000)
 })
-bot.command("test", (ctx) => {
-    const centeredText =
-        'Hello,\n\n' +
-        'Here is a way to create the illusion of centered text on Telegram.\n' +
-        '────────────────────\n\n' + // Create a horizontal line for visual separation
-        'Centered Text\n\n' +
-        '────────────────────\n\n' + // Create another horizontal line
-        'This text appears centered!';
+bot.command("info", (ctx) => {
+    const chatId = ctx.message.chat.id; // Get the chat ID
+    const messageId = ctx.message.message_id;
+    let IMG="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh2TVdhCiwYJhZeFz21nqONTIfBcmwQXlQcNzPS3O0L1hU9zW27IL-qneGuGE4MztQmOEzMa7af0oDP-5x2SWZ9bcBqt_RuKtJez_urFzKzSqkMdKV9iyMYKXMjIgQFLGXanZKF4F-u8kE/s1600/Palestine.jpg" 
+    let html = `
+    اللهم ارزق إخواننا في فلسطين الصمود والقوة في وجه الطغيان وانصرهم.
 
-    ctx.reply(centeredText);
+
+    <b>التربية العسكرية</b>:
+    التربية العسكرية مطلب للتخرج
+    التقديم: بيكون معاك صورةالبطاقة و صورة الكارنية او ايفادة من الكلية
+    ان انت طالبو صورتين شخصية و بتقدم لما الدورة بتفتح
+    
+<b> مهارات التوظيف</b>:
+    مطلب للتخرج للبنين و البنات
+    بتسجل في الفروم و بتروح تدفع 60 جنية للشهادة
+    
+<b>مصاريف الكتب</b>:
+
+المطلوب :
+    930 جنية
+    صورة البطاقة
+
+ بتروح شئون الطلاب تعمل استخراج اذن دفع
+ بتاخد اذن الدفع و تروح الخزنة تدفع 930 عن طريق الفيزا وبتاخد وصلين
+ بترجع تسلم للشئون الوصل وصورة بطاقة
+
+<b>مصاريف الكلية</b>:
+ بيتم الدفع عن طريق مكينة الدفع الالي
+905 جنية انظام
+1635 انتساب
+علي كود 609
+ الدفع بالرقم القومي او رقم الطالب الموجود علي كارنية الكلية
+
+ ────────────────────
+   <b>Created By : </b> @DevPenetration
+    ────────────────────
+    this remover after 2m
+    ────────────────────
+    `
+    ctx.reply(html, { parse_mode: "HTML", disable_web_page_preview: true })
+    setTimeout(() => {
+        ctx.telegram.deleteMessage(chatId, messageId)
+        ctx.telegram.deleteMessage(chatId, messageId + 1)
+    }, 1000)
 })
 
 bot.hears(/.*/,async (ctx) => {
     const text = ctx.message.text;
     let userName = ctx.message.from.username
     console.log(ctx.message.from.username)
-    let permesionsUser = ["DevPenetration" ]
+    let permesionsUser = ["DevPenetration","GlxBad" ]
     console.log("permesions:  ", permesionsUser.includes(userName))
     console.log(hasLinks(text).includes(true))
     if (permesionsUser.includes(userName)) {
