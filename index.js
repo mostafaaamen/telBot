@@ -1,9 +1,10 @@
 require("dotenv").config()
 const { Telegraf } = require('telegraf')
+const express = require("express")
+const app = express()
 const bot = new Telegraf(process.env.TOKEN)
 function hasLinks(text) {
     const urlPattern = /^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([/\w .-]*)*\/?(\?[\w-]+=[\w-%&]*)?$/i;
-    const urlRegex = /(http:\/\/|https:\/\/)\S+/gi;
     return urlPattern.test(text);
 }
 bot.hears(/.*/,async (ctx) => {
@@ -11,7 +12,7 @@ bot.hears(/.*/,async (ctx) => {
     const textLength = text.length;
     let userName = ctx.message.from.username
     console.log(ctx.message.from.username)
-    let permesionsUser = ["DevPenetration", ]
+    let permesionsUser = ["DevPenetration","DevAtacker" ]
     console.log("permesions:  ", permesionsUser.includes(userName))
     if (permesionsUser.includes(userName)) {
         return
@@ -32,7 +33,7 @@ bot.hears(/.*/,async (ctx) => {
                      ----------------------------
 if you want to send importan link 
 can you send to 
-@DevPenetration 
+@DevPenetration or @DevAtacker
                     ----------------------------------------------
 
 System Created By
@@ -43,5 +44,15 @@ massage delete after 10s
                      ctx.telegram.deleteMessage(chatId, messageId + 1);}, 10000);
             } catch (error) {
                 console.error('Error deleting message:', error);
-            }}}});
+            }
+        }
+    }
+});
+            
 bot.launch()
+
+app.get("/", (req, res) => {
+    res.send("hellow from bot telegram to remove links")
+})
+let PORT=process.env.PORT||3002
+app.listen(PORT,()=>console.log("server running on 3020"))
