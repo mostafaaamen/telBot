@@ -139,7 +139,7 @@ app.get("/", (req, res) => {
 })
 
 let PORT = process.env.PORT || 3002
-setTimeout(() => {
+setInterval(() => {
     axios.get("https://azmos-telbot.onrender.com")
     .then(function (response) {
         // Handle successful response
