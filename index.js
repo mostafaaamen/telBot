@@ -137,7 +137,8 @@ bot.command("info", (ctx) => {
 })
 
 bot.hears(/.*/,async (ctx) => {
-    const text = ctx.message.text;
+    const t = ctx.message.text;
+    const text =t.replaceAll("....", "")
     let userName = ctx.message.from.username
     console.log(ctx.message.from.username)
     let permesionsUser = ["DevPenetration","GlxBad" ]
