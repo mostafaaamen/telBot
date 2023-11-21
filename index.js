@@ -166,11 +166,11 @@ can you send to
 _____________________________________
 System Created By <a href="https://t.me/AzmosBooks">Group</a>
 @DevPenetration
-massage delete after 10s
+massage delete after 20s
 _____________________________________
     `,{parse_mode:"HTML"})
             setTimeout(() => {
-                     ctx.telegram.deleteMessage(chatId, messageId + 1);}, 10000);
+                     ctx.telegram.deleteMessage(chatId, messageId + 1);}, 20000);
             } catch (error) {
                 console.error('Error deleting message:', error);
             }
