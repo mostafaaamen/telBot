@@ -195,7 +195,7 @@ setInterval(() => {
         // Handle error
         console.error('Error:', error);
     })
-}, 1000*60*10);
+}, 1000*60*5);
 app.listen(PORT,()=>console.log(`server running on ${PORT}`))
 
 
