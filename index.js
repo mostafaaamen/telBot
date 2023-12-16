@@ -77,7 +77,7 @@ bot.command("link", (ctx) => {
     ────────────────────
    <b>Created By : </b> @DevPenetration
     ────────────────────
-    this remover after 10s
+    this remover after 40s
     ────────────────────`
     const text = ctx.message.text;
     console.log(ctx.message.from.username)
@@ -87,7 +87,7 @@ bot.command("link", (ctx) => {
     setTimeout(() => { 
         ctx.telegram.deleteMessage(chatId, messageId)
         ctx.telegram.deleteMessage(chatId, messageId + 1)
-    },10000)
+    },40000)
 })
 bot.command("info", (ctx) => {
     const chatId = ctx.message.chat.id; // Get the chat ID
